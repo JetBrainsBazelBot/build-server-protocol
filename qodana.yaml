@@ -1,0 +1,41 @@
+version: "1.0"
+profile:
+  base:
+    name: empty
+  groups:
+    - groupId: Regressions
+      inspections:
+        - QodanaSanity
+        - UnresolvedPropertyKey
+  inspections:
+    - group: Regressions
+      enabled: true
+      ignore:
+        # common file extensions ignore (from target format)
+        - "**/test/data/**"
+        - "**/test/resources/**"
+        - "**/testData/**"
+        - "**/testdata/**"
+        - "**/TestResources/**"
+        - "**/*TestResources/**"
+        - "**/*.bash"
+        - "**/*.def"
+        - "**/*.ft"
+        - "**/*.http"
+        - "**/*.ignore"
+        - "**/*.json"
+        - "**/*.ndjson"
+        - "**/*.ps1"
+        - "**/*.rest"
+        - "**/*.rnc"
+        - "**/*.sh"
+        - "**/*.template"
+        - "**/*.toml"
+        - "**/*.vm"
+        - "**/*.yaml"
+        - "**/*.yml"
+        - "**/*.zsh"
+
+failureConditions:
+  severityThresholds:
+    critical: 1
